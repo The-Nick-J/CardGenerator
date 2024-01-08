@@ -10,10 +10,30 @@
       return values[randomIndex];
   }
 
+  // FUNCION ICONO RANDOM
+  function getRandomIcon() {
+    const icons = ['heart', 'cube', 'diamond', 'crown']
+    return icons[getRandomNumber(0, icons.length - 1)];
+  }
+
   //ACTUALIZAR EL CONTENIDO
   function update() {
+
+    const randomIcon = getRandomIcon();
+
+  // ITERAR QUERYSELECTOR
+  document.querySelectorAll('.icon').forEach(element => {
+
+    // remover antiguo icono y obtener nuevo
+    element.classList.remove('fa-heart', 'fa-diamond', 'fa-cube', 'fa-crown', 'red');
+    element.classList.add(`fa-${randomIcon}`);
+
+    // Add 'red' class if the icon is 'heart'
+    if (randomIcon === 'heart' || randomIcon === 'cube' ) {
+        element.classList.add('red');
+    }
+  });
   document.querySelector('#numero').innerText = getRandomCardValue();
+};
 
-  };
-
-  document.addEventListener('DOMContentLoaded', update);
+  document.getElementById('generateButton').addEventListener('click', update);
