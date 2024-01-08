@@ -1,0 +1,20 @@
+body {
+  background-color: green;
+}
+
+.bigContainer {
+  margin-top: 15%;
+  margin-left: 30%;
+  width: 300px;
+  height: 400px;
+  background-color: white;
+}
+
+.container {
+  width: 200px;
+  height: 320px;
+}
+
+#numero {
+  font-size: 80px;
+}
